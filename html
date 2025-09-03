@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🆎 Music — Earning Booklet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b10; --card:#12121a; --ink:#e8e9f0; --muted:#a7abc2; --brand:#2563eb; --brand2:#3b82f6; --glow:#60a5fa;
+      --good:#10b981; --warn:#f59e0b; --danger:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.25), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(59,130,246,.18), transparent 60%),
+                  linear-gradient(180deg, #0a0a12, #0b0b10 25%, #0a0a12);
+      color:var(--ink);
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
+          border:1px solid rgba(255,255,255,.06); border-radius:24px; box-shadow:0 30px 80px rgba(59,130,246,.10), inset 0 1px 0 rgba(255,255,255,.06)}
+    .hero{
+      position:relative; overflow:hidden; padding:48px; text-align:center;
+      background:radial-gradient(1200px 700px at 50% -20%, rgba(96,165,250,.25), transparent 60%), var(--card);
+    }
+    .hero img.logo{max-width:200px;margin-bottom:20px;}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border-radius:999px;background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.35);font-weight:600;color:#dbeafe}
+    .title{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:16px 0;font-weight:800;letter-spacing:-.02em}
+    .subtitle{font-size:clamp(16px,2.4vw,22px);color:var(--muted);max-width:780px;margin:0 auto}
+    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:14px 20px;border-radius:14px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:#1a1a24;cursor:pointer;transition:.25s transform,.25s box-shadow}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 10px 30px rgba(37,99,235,.35)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.35)}
+    .mono{font-family:Silkscreen, monospace; letter-spacing:.5px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .feature{padding:18px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08)}
+    .kicker{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.18em}
+    h2{font-size:clamp(22px,3.8vw,32px);margin:10px 0 18px}
+    p{color:#cfd3ec}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.22);font-weight:600}
+    .section{margin-top:32px}
+    .list{display:grid;gap:10px}
+    .list .row{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:12px;border-radius:14px}
+    .ghost{opacity:.75}
+    .footer{opacity:.7;font-size:14px;text-align:center;padding:22px}
+    .print{position:fixed;right:18px;top:18px;z-index:12}
+    @media print{
+      .print, .cta-row {display:none !important}
+      body{background:white;color:black}
+      .card,.feature,.list .row{background:white;border:1px solid #999}
+      .hero{background:white}
+      a{text-decoration:none;color:black}
+    }
+  </style>
+</head>
+<body>
+  <button class="btn print" onclick="window.print()" title="Save as PDF or Print">🖨️ Save as PDF</button>
+  <main class="wrap">
+    <!-- HERO / COVER -->
+    <header class="card hero">
+      <img class="logo" src="https://i.ibb.co/ncXnnv7/ab-music-blue-logo.png" alt="AB Music Logo" />
+      <div class="badge">🆎 Music · Earning Booklet 🔖</div>
+      <h1 class="title">More Than Music — It’s a Key 🔑</h1>
+      <p class="subtitle">Earn it or buy it. The <strong>🆎 Music Booklet</strong> unlocks fan perks, access, and drops. Valued at <span class="mono">$1,000,000,000</span> — a symbol of limitless potential.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#earn">✨ Earn the Booklet</a>
+        <a class="btn" href="#buy">💳 Buy Now</a>
+        <a class="btn" href="#access">🔓 What You Unlock</a>
+      </div>
+    </header><!-- Rest of the content remains unchanged -->
+<!-- ... -->
+
+<p class="footer">© <span id="yr"></span> 🆎 Music · All rights reserved</p>
+
+  </main>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear()</script>
+</body>
+</html>
