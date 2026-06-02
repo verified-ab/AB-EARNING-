@@ -1,62 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🆎 Music — Earning Booklet</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0b10; --card:#12121a; --ink:#e8e9f0; --muted:#a7abc2;
-      --brand:#2563eb; --brand2:#3b82f6; --glow:#60a5fa;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background: linear-gradient(180deg, #0a0a12, #0b0b10 25%, #0a0a12);
-      color:var(--ink);
-    }
-    .wrap{max-width:980px;margin:0 auto;padding:24px}
-    .card{background:#12121a;border-radius:24px;padding:48px;text-align:center}
-    .logo{max-width:200px;margin-bottom:20px}
-    .badge{display:inline-block;padding:6px 12px;border-radius:999px;
-      background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.35);
-      font-weight:600;color:#dbeafe}
-    .title{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:16px 0;font-weight:800}
-    .subtitle{font-size:clamp(16px,2.4vw,22px);color:var(--muted);max-width:780px;margin:0 auto}
-    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-    .btn{padding:14px 20px;border-radius:14px;font-weight:700;
-      border:1px solid rgba(255,255,255,.12);background:#1a1a24;
-      cursor:pointer;text-decoration:none;color:white}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2))}
-    .footer{opacity:.7;font-size:14px;text-align:center;padding:22px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AB MUSIC RECORD LTD</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:20px;
+    text-align:center;
+    border-bottom:3px solid #2563eb;
+}
+
+header h1{
+    color:#3b82f6;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:20px auto;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+.card h2{
+    color:#60a5fa;
+}
+
+.form-box{
+    background:#1e293b;
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    background:white;
+    color:black;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+}
+
+table th,
+table td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    padding:15px;
+    color:#94a3b8;
+}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="card">
-      <img class="logo" src="https://i.ibb.co/ncXnnv7/ab-music-blue-logo.png" alt="AB Music Logo" />
-      <div class="badge">🆎 Music · Earning Booklet 🔖</div>
-      <h1 class="title">More Than Music — It’s a Key 🔑</h1>
-      <p class="subtitle">
-        Earn it or buy it. The <strong>🆎 Music Booklet</strong> unlocks fan perks, access, and drops.
-        Valued at <b>$1,000,000,000</b> — a symbol of limitless potential.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="#earn">✨ Earn the Booklet</a>
-        <a class="btn" href="#buy">💳 Buy Now</a>
-        <a class="btn" href="#access">🔓 What You Unlock</a>
-      </div>
-    </header>
 
-    <p class="footer">© <span id="yr"></span> 🆎 Music · All rights reserved</p>
-  </main>
+<header>
+    <h1>AB MUSIC RECORD LTD</h1>
+    <p>Record Label Management Dashboard</p>
+</header>
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+<div class="container">
+
+<div class="dashboard">
+
+<div class="card">
+<h2 id="artistCount">0</h2>
+<p>Artists</p>
+</div>
+
+<div class="card">
+<h2 id="songCount">0</h2>
+<p>Songs</p>
+</div>
+
+<div class="card">
+<h2 id="revenue">$0</h2>
+<p>Total Revenue</p>
+</div>
+
+</div>
+
+<div class="form-box">
+<h2>Add Artist</h2>
+
+<input type="text" id="artistName" placeholder="Artist Name">
+
+<button onclick="addArtist()">Add Artist</button>
+</div>
+
+<div class="form-box">
+<h2>Add Song Revenue</h2>
+
+<input type="text" id="songTitle" placeholder="Song Title">
+
+<input type="number" id="songRevenue" placeholder="Revenue">
+
+<button onclick="addSong()">Add Song Revenue</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Artist</th>
+<th>Earnings</th>
+</tr>
+</thead>
+
+<tbody id="artistTable"></tbody>
+</table>
+
+</div>
+
+<footer>
+© 2026 AB MUSIC RECORD LTD
+</footer>
+
+<script>
+
+let artists = [];
+let songs = [];
+let totalRevenue = 0;
+
+function updateDashboard(){
+
+document.getElementById("artistCount").innerText =
+artists.length;
+
+document.getElementById("songCount").innerText =
+songs.length;
+
+document.getElementById("revenue").innerText =
+"$" + totalRevenue.toFixed(2);
+
+}
+
+function addArtist(){
+
+const name =
+document.getElementById("artistName").value;
+
+if(!name) return;
+
+artists.push({
+id: artists.length + 1,
+name:name,
+earnings:0
+});
+
+renderArtists();
+
+document.getElementById("artistName").value="";
+
+updateDashboard();
+
+}
+
+function addSong(){
+
+const title =
+document.getElementById("songTitle").value;
+
+const revenue =
+parseFloat(
+document.getElementById("songRevenue").value
+);
+
+if(!title || !revenue) return;
+
+songs.push({
+title,
+revenue
+});
+
+totalRevenue += revenue;
+
+if(artists.length > 0){
+artists[0].earnings += revenue;
+}
+
+renderArtists();
+
+document.getElementById("songTitle").value="";
+document.getElementById("songRevenue").value="";
+
+updateDashboard();
+
+}
+
+function renderArtists(){
+
+const table =
+document.getElementById("artistTable");
+
+table.innerHTML="";
+
+artists.forEach(a=>{
+
+table.innerHTML += `
+<tr>
+<td>${a.id}</td>
+<td>${a.name}</td>
+<td>$${a.earnings.toFixed(2)}</td>
+</tr>
+`;
+
+});
+
+}
+
+updateDashboard();
+
+</script>
+
 </body>
 </html>
